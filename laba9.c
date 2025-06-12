@@ -66,10 +66,10 @@ BTNode* bt_search(BTNode *root, char *key) {
     }
 }
 
-void free_bst(BTNode *root) {
+void free_bt(BTNode *root) {
     if (root == NULL) return;
-    free_bst(root->left);
-    free_bst(root->right);
+    free_bt(root->left);
+    free_bt(root->right);
     free(root);
 }
 
@@ -256,7 +256,7 @@ void test_search_algorithms(int data_size) {
     printf("\n");
 
     free(array);
-    free_bst(bst_root);
+    free_bt(bst_root);
     free_rbt(rbt_root);
 }
 
